@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Page web personnelle </title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Fatim zahra Chitaoui </h1>
+        <section class="section1">
+            <h2> voici la première section </h2>
+            <p>Bonjour, je me présente étant étudiante</p>
+           <img src=""> 
+        </section>
+        <section class="section2">
+            <h2>Mes Hobbies</h2>
+    <ul>
+        <li>Tennis</li>
+        <li>Piano</li>
+    </ul>
+
+    <h2>Nos Objectifs pour cette Année</h2>
+    <ol>
+        <li>Améliorer mes compétences en développement web.</li>
+        <li>Participer à une conférence technologique.</li>
+    </ol>
+        </section>
+        <table border="2">
+            <tr>
+                <th>Nom</th>
+                <th> Age</th>
+                <th>Ville</th>
+                <th>Profil</th>
+            </tr>
+            <tr>
+                <td>Kawtar</td>
+                <td>20</td>
+                <td>casa</td>
+                <td><a href=" www.linkedin.com">voir le profil de kawtar</a></td>
+            </tr>
+            <tr>
+                <td>Youssra</td>
+                <td>26</td>
+                <td>casa</td>
+                <td><a href=" www.linkedin1.com">voir le profil de youssra</a></td>
+            </tr>
+            <tr>
+                <td>FZ</td>
+                <td>25</td>
+                <td>rabat</td>
+                <td><a href=" www.linkedin2.com">voir le profil de FZ</a></td>
+            </tr>
+        </table>
+        <form>
+            <section class="form">
+                <h2>Formulaire de Contact</h2>
+                <form id="contactForm">
+                   
+                        <label for="name">Nom :</label><br>
+                        <input type="text" id="name" name="name" placeholder="Saisir votre nom " required><br>
+                        <label for="email">Email :</label><br>
+                        <input type="email" id="email" name="email" placeholder="Saisir votre email" required><br>
+                        <label for="message">Message :</label><br>
+                        <textarea id="message" name="message" placeholder="Laisser votre message ici " rows="5" required></textarea><br>
+                        <button type="submit">Soumettre</button><br>
+                   
+            </section>
+        </form>
+        <script>
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault(); 
+    
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                if (name === '') {
+                    alert('Le champ "Nom" est requis.');
+                    return;
+                }
+                const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!emailPattern.test(email)) {
+                    alert('Veuillez entrer une adresse email valide.');
+                    return;
+                }
+                alert('Formulaire soumis avec succès !');
+            });
+        </script>
+    </body>
+</html>
